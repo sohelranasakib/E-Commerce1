@@ -40,6 +40,7 @@ const Cart = () => {
   }
 
   return (
+ <>
  <div className=" my-20">
     <Container>
     <h2 className='font-sans text-[#262626] text-[36px] font-bold'>Cart</h2>
@@ -88,54 +89,115 @@ const Cart = () => {
  </div>
 </Flex>
     ))}
+       <Flex className="gap-x-5 py-4 border-[1px] pl-5 items-center">
+                <select
+                  name=""
+                  id=""
+                  className="border-2 w-[200px] py-[5px] font-sans text-[14px] text-[#262626] font-bold"
+                >
+                  <option
+                    className="font-sans text-[14px] text-[#262626] font-bold"
+                    value=""
+                  >
+                    SIZE
+                  </option>
+                  <option
+                    className="font-sans text-[14px] text-[#262626] font-bold"
+                    value=""
+                  >
+                    S
+                  </option>
+                  <option
+                    className="font-sans text-[14px] text-[#262626] font-bold"
+                    value=""
+                  >
+                    M
+                  </option>
+                  <option
+                    className="font-sans text-[14px] text-[#262626] font-bold"
+                    value=""
+                  >
+                    L
+                  </option>
+                  <option
+                    className="font-sans text-[14px] text-[#262626] font-bold"
+                    value=""
+                  >
+                    XL
+                  </option>
+                  <option
+                    className="font-sans text-[14px] text-[#262626] font-bold"
+                    value=""
+                  >
+                    XXL
+                  </option>
+                </select>
+                <div className="">
+                  <h4 className="font-sans text-[14px] text-[#262626] font-bold">
+                    Apply coupon
+                  </h4>
+                </div>
+              </Flex>
 
-    <div className=" flex justify-end">
-     <div className="">
-     <h2 className='font-sans text-[#262626] text-[22px] font-bold text-end'>Cart totals</h2>
-      <div className=" flex">
-      <div className=" w-[200px] border-2 border-[#262626]">
-          <h2 className=' text-center'> Subtotal</h2>
-        </div>
-        <div className="w-[250px] border-2 border-[#262626] pl-4">
-          <h3>{totalPrice}$</h3>
+   <div className="text-end">
+            <div className="">
+              <h3 className="font-sans text-[20px] text-[#262626] font-bold pb-[24px] pt-[50px]">
+                Cart Total
+              </h3>
+            </div>
+            <div className="flex justify-end pb-[45px]">
+              <table className="border-2">
+                <tr>
+                  <td className="border-2 py-2 w-[250px] text-start pl-5 font-sans text-[16px] text-[#262626] font-bold">
+                    Total Quantity
+                  </td>
+                  <td className="border-2 py-2 w-[250px] text-start pl-5 font-sans text-[16px] text-[#262626] font-normal">
+                    {totalQuantity}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-2 py-2 w-[250px] text-start pl-5 font-sans text-[16px] text-[#262626] font-bold">
+                    Subtotal
+                  </td>
+                  <td className="border-2 py-2 w-[250px] text-start pl-5 font-sans text-[16px] text-[#767676] font-normal">
+                    {totalPrice} $
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border-2 py-2 w-[250px] text-start pl-5 font-sans text-[16px] text-[#262626] font-bold">
+                    Total
+                  </td>
+                  <td className="border-2 py-2 w-[250px] text-start pl-5 font-sans text-[16px] text-[#262626] font-normal">
+                    {totalPrice} $
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div className="">
+              <button
+                onClick={handleCheckOut}
+                className="font-sans text-[16px] text-[#FFF] font-bold py-[16px] px-[25px] bg-[#262626]"
+              >
+                Proceed to Checkout
+              </button>
+            </div>
           </div>
-      </div>
-      <div className="flex my-1">
-        <div className="w-[200px] border-2 border-[#262626]">
-          <h3 className=' text-center'>Quantity</h3>
-        </div>
-        <div className="w-[250px] border-2 border-[#262626] pl-4">
-          <h3>{totalQuantity}</h3>
-        </div>
-      </div>
-      <div className="flex ">
-        <div className="w-[200px] border-2 border-[#262626]">
-          <h3 className=' text-center'>Total</h3>
-        </div>
-        <div className="w-[250px] border-2 border-[#262626] pl-4">
-          <h3>{totalPrice}$</h3>
-        </div>
-      </div>
-      <div className=" pt-2" onClick={handleCheckOut}>
-        <p className='w-[200px] h-[50px] border-2 border-[#fff] inline-block text-center leading-[40px] bg-[#262626] text-[rgba(255,255,255,0.7)] hover:text-white'>Proceed to Checkout</p>
-      </div>
-     </div>
-    </div>
-    <ToastContainer
-position="top-center"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-/>
-   
+          <ToastContainer className="w-[100%] text-center"
+            position="top-center"
+            autoClose={2500}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            
+          />
    </Container>
  </div>
+ </>
   )
 }
 
