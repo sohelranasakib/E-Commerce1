@@ -81,7 +81,7 @@ const Navber = () => {
                 </div>
                 </div>
                 {accountShow && 
-                <div className=" absolute lg:top-[150px] z-50 top-[10px] right-[180px]  bg-[#262626] w-[200px] py-[10px] px-[px]">
+                <div className=" absolute lg:top-[150px] z-50 top-[10px] right-[180px]  bg-[#262626] w-[200px] py-[10px]">
                     <div className=" text-center">
                         <h3 className='text-[rgba(255,255,255,0.7)] font-sans font-bold text-[16px] py-2 duration-300 ease-in-out pl-3 hover:pl-6  hover:text-white'>My Account</h3>
                     </div>
@@ -103,7 +103,7 @@ const Navber = () => {
                      <h5 className='text-[rgba(255,255,255,0.7)] hover:text-white'>$44.00</h5>
                  </div>
                  <div className="">
-                 <RxCross2 />
+                 <RxCross2 className=' text-white'/>
                  </div>
                 </div>
                 <div className="">

@@ -18,7 +18,7 @@ const Banner = () => {
         autoplaySpeed: 3000,
         arrows: false,
         appendDots: dots => (
-          <div className='tmi'
+          <div
             style={{
               borderRadius: "10px",
               padding: "10px",
