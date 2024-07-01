@@ -6,8 +6,11 @@ import { FaSearch, FaUser  } from "react-icons/fa";
 import { MdArrowDropDown } from "react-icons/md";
 import cartimg from "../assets/cart.png"
 import { RxCross2 } from "react-icons/rx";
+import { useSelector } from 'react-redux';
 
 const Navber = () => {
+    let data = useSelector((state)=> state.product.cartItem)
+    console.log(data);
     let[cartShow, setCartShow]= useState(false)
     let[usercartShow, setUserCartShow]= useState(false)
     let[accountShow, setAccountShow]= useState(false)
@@ -77,7 +80,15 @@ const Navber = () => {
                 </div>
               
                 <div ref={userref} className="">
-                <FaCartArrowDown />
+                    <div className=" relative ">
+                        {data.length > 0 ? <div className="absolute h-[20px] w-[20px] bg-[#767676] left-[10px] top-[-15px] rounded-full text-center text-white ">
+                    {data.length}
+                    </div> : ""}
+                    <FaCartArrowDown />
+                    
+                    </div>
+                    
+                
                 </div>
                 </div>
                 {accountShow && 
