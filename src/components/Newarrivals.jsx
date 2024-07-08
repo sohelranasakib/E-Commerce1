@@ -47,7 +47,7 @@ const Newarrivals = () => {
   
   return (
     <Container>
-       <h3 className=' font-bold font-sans text-[39px]'>New Arrivals</h3>
+       <h3 className=' font-bold font-sans text-[39px] lg:pl-0 pl-5'>New Arrivals</h3>
       
         <Slider {...settings} >
         {data.map((item)=>(

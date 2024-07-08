@@ -45,7 +45,7 @@ const Banner = () => {
         )
       };
   return (
-  <>
+  <section className='lg:mt-0 mt-1'>
     <Slider {...settings}>
        <div className="">
         <img src={banner} alt="" />
@@ -61,25 +61,25 @@ const Banner = () => {
     </div>
     </Slider>
     <Container>
-        <Flex className=" justify-between">
-             <div className="">
-                <h2 className=' font-sans font-bold text-[16px] lg:text-[#767676]  text-white '> <span className=' pr-2 font-bold text-[22px]'>2</span> Two years warranty</h2>
+        <dive className=" lg:flex justify-between ">
+             <div className="lg:pl-0 pl-4">
+                <h2 className=' font-sans font-bold text-[16px] text-[#767676]  '> <span className=' pr-2 font-bold text-[22px]'>2</span> Two years warranty</h2>
              </div>
-             <div className="">
+             <div className="lg:pl-0 pl-4">
                 <div className=" flex items-center gap-x-2">
                 <FaTruck />
-                <h2 className=' font-sans font-bold text-[16px] lg:text-[#767676]  text-white '>Free shipping</h2>
+                <h2 className=' font-sans font-bold text-[16px] text-[#767676]  '>Free shipping</h2>
                 </div>
              </div>
-             <div className="">
+             <div className="lg:pl-0 pl-4">
                 <div className=" flex items-center gap-x-2">
                 <IoReload />
-                <h2 className=' font-sans font-bold text-[16px] lg:text-[#767676]  text-white '>Return policy in 30 days</h2>
+                <h2 className=' font-sans font-bold text-[16px] text-[#767676]   '>Return policy in 30 days</h2>
                 </div>
              </div>
-        </Flex>
+        </dive>
     </Container>
-  </>
+  </section>
   
 
   )

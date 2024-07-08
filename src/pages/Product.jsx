@@ -22,6 +22,7 @@ const Product = () => {
     let [catshow, setCatShow] = useState(false)
     let [category, setCategory] = useState([])
     let [categorySearchFilter, setCategorySearchFilter] =useState([])
+    let [multiList, setMultiList] = useState('')
     
 
     let lastPage = currentPage * perPage
@@ -62,20 +63,22 @@ let handleSubcate = (citem)=>{
     setCategorySearchFilter(categoryFilter)
 }
 
-
+let handleList = ()=>{
+    setMultiList("activeList");
+}
     return (
         <section>
             <Container>
-                <Flex>
-                    <div className="w-[30%]">
-                        <div className="lg:pb-[70px] pb-[10px]">
+                <div className=' lg:flex'>
+                    <div className="lg:w-[30%] w-[90%]">
+                        <div className="lg:pb-[60px] pb-[10px] pl-5 ">
                             <h2 className='font-sans text-[#262626] lg:text-[36px] text-[20px] font-bold'>Products</h2>
                             <h3 className="flex items-center gap-x-2 font-sans text-[12px] text-[#767676] font-normal">
                                 <Link to="/">Home</Link> <RxCaretRight /> Products
                             </h3>
                         </div>
-                        <div className="">
-                            <h3 onClick={() => setCatShow(!catshow)} className='font-sans lg:text-[20px] text-[12px] font-bold text-[#262626] flex justify-between items-center cursor-pointer'>Shop by Category <p>{catshow == true ? <FaCaretUp /> : <FaCaretDown />}</p></h3>
+                        <div className="  pl-5">
+                            <h3 onClick={() => setCatShow(!catshow)} className='font-sans text-[20px]  font-bold text-[#262626] flex justify-between items-center cursor-pointer'>Shop by Category <p>{catshow == true ? <FaCaretUp /> : <FaCaretDown />}</p></h3>
                             {catshow &&
                                 <ul>
                                     {category.map((item)=>(
@@ -88,26 +91,26 @@ let handleSubcate = (citem)=>{
                         </div>
                         
                     </div>
-                    <div className=" w-[80%] pl-10">
-                        <div className=" flex justify-between pt-[130px]">
+                    <div className=" lg:w-[80%] w-[90%]  pl-10">
+                        <div className=" flex justify-between lg:pt-[130px] pt-[30px]">
                             <div className="">
                                 <div className="flex gap-x-5 lg:justify-normal justify-center lg:w-[30%] w-100%">
-                                    <div className="lg:h-[46px] h-[26px] lg:w-[46px] w-[26px] flex justify-center items-center text-[#737373] hover:text-white duration-300 ease-in-out hover:bg-black border-[1px] border-[#737373] text-[35px]"><PiSquaresFourFill /></div>
-                                    <div className="lg:h-[46px] h-[26px] lg:w-[46px] w-[26px] flex justify-center items-center text-[#737373] hover:text-white duration-300 ease-in-out hover:bg-black border-[1px] border-[#737373] text-[35px]"><GrSort /></div>
+                                    <div onClick={()=>setMultiList("")} className={`lg:h-[46px] h-[26px] lg:w-[46px] w-[26px] flex justify-center items-center  ${multiList == "activeList" ? "bg-white " : "bg-black text-white" } border-[1px] border-[#737373] text-[35px]`}><PiSquaresFourFill /></div>
+                                    <div onClick={handleList} className={`lg:h-[46px] h-[26px] lg:w-[46px] w-[26px] flex justify-center items-center text-[#737373]  ${multiList == "activeList" ? "bg-black text-white" : "bg-white" } border-[1px] border-[#737373] text-[35px]`}><GrSort /></div>
                                 </div>
                             </div>
-                            <div className=" flex ">
+                            <div className=" lg:flex  ">
                                 <div className=" flex items-center mr-6">
-                                    <h2 className='mr-[10px] font-sans'>Sort by :</h2>
-                                    <select className=' px-[47px] py-[5px] border-[1px] border-[#262626] outline-none rounded-[2px]'>
+                                    <h2 className='mr-[10px] font-bold  font-sans text-[16px]'>Sort by :</h2>
+                                    <select className=' lg:px-[47px] py-[5px] border-[1px] border-[#262626] outline-none rounded-[2px]'>
                                         <option>Featured</option>
                                         <option >Price</option>
                                         <option >Category</option>
                                     </select>
                                 </div>
-                                <div className=" flex items-center">
-                                    <h2 className='mr-[10px] font-sans'>Show :</h2>
-                                    <select className='px-[47px] py-[5px] border-[1px] border-[#262626] outline-none'>
+                                <div className=" flex items-center lg:mt-0 mt-2">
+                                    <h2 className='mr-[10px] font-bold lg:pl-0 pl-3 text-[16px]'>Show :</h2>
+                                    <select className='lg:px-[47px] lg:py-[5px] border-[1px] border-[#262626] outline-none '>
                                         <option>36</option>
                                         <option >30</option>
                                         <option >20</option>
@@ -117,17 +120,16 @@ let handleSubcate = (citem)=>{
 
                         </div>
 
-                        <div className=" flex justify-between flex-wrap">
-
-                            <Post allData={allData} categorySearchFilter={categorySearchFilter}/>
-
-                        </div>
+                             <div className="">
+                             <Post allData={allData} categorySearchFilter={categorySearchFilter} multiList={multiList}/>
+                             </div>
+                       
                         <div className=" text-end">
                             <PaginationArea pageNumber={pageNumber} Paginate={Paginate} currentPage={currentPage} next={next} prev={prev} />
                         </div>
 
                     </div>
-                </Flex>
+                </div>
             </Container>
         </section>
     )

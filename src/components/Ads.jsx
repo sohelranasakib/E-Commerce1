@@ -8,10 +8,10 @@ import img3 from "../assets/img3.png"
 
 const Ads = () => {
   return (
-  <section className=' py-20'>
+  <section className=' lg:py-20 py-10'>
       <Container>
-        <Flex className=" justify-between">
-            <div className=" w-[48%]">
+        <Flex className="justify-between">
+            <div className="w-[48%]">
                 <img src={img1} alt="img1" />
             </div>
             <div className=" w-[48%]">

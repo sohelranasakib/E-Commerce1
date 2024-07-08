@@ -9,7 +9,7 @@ import { FaCartArrowDown } from "react-icons/fa6";
 const Arrivalsone = ({item}) => {
     
   return (
-    <div className=" sm:w-full lg:w-[96%] py-5">
+    <div className=" w-full lg:w-[96%] py-5 lg:px-0 px-5">
         <div className=" relative group overflow-hidden">
             <img src={item.thumbnail} className=' h-[350px]' alt="arrival1" />
             <div className=" bg-white absolute left-0 bottom-[-120px] w-full h-[130px] flex items-center justify-end duration-300 ease-in-out group-hover:bottom-0 ">
